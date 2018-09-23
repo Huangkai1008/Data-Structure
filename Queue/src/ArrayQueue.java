@@ -52,7 +52,7 @@ public class ArrayQueue<E> implements Queue<E>{
                 res.append(", ");
             }
         }
-        // 对胃
+        // 队尾
         res.append("] tail");
         return res.toString();
     }
