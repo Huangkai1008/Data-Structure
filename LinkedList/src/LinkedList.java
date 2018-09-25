@@ -128,6 +128,34 @@ public class LinkedList<E> {
         return false;
     }
 
+    // 删除索引所制定的元素
+    public E remove(int index){
+        if (index < 0 || index >= size){
+            throw new IllegalArgumentException("Remove failed, illegal index");
+        }
+        Node prev = dummyHead;
+
+        for (int i = 0; i < index ; i++){
+            prev = prev.next;
+        }
+
+        Node retNode = prev.next;
+        prev.next = retNode.next;
+        retNode.next = null;
+        size --;
+        return retNode.e;
+    }
+
+    // 删除链表第一个元素
+    public E removeFirst(){
+        return remove(0);
+    }
+
+    // 删除链表中最后一个元素
+    public E removeLast(){
+        return remove(size - 1);
+    }
+
     @Override
     public String toString(){
         StringBuilder res = new StringBuilder();
