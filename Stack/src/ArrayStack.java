@@ -2,11 +2,11 @@ public class ArrayStack<E> implements Stack<E> {
 
     Array<E> array;
 
-    public ArrayStack(int capacity){
-         array = new Array<>(capacity);
+    public ArrayStack(int capacity) {
+        array = new Array<>(capacity);
     }
 
-    public ArrayStack(){
+    public ArrayStack() {
         array = new Array<>();
     }
 
@@ -20,7 +20,7 @@ public class ArrayStack<E> implements Stack<E> {
         return array.isEmpty();
     }
 
-    public int getCapacity(){
+    public int getCapacity() {
         return array.getCapacity();
     }
 
@@ -40,13 +40,13 @@ public class ArrayStack<E> implements Stack<E> {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder res = new StringBuilder();
         res.append("Stack: ");
         res.append('[');
         for (int i = 0; i < array.getSize(); i++) {
             res.append(array.get(i));
-            if (i != array.getSize() - 1){
+            if (i != array.getSize() - 1) {
                 res.append(", ");
             }
         }
