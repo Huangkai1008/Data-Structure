@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class BST<E extends Comparable<E>> {
 
     // 节点
@@ -78,10 +80,25 @@ public class BST<E extends Comparable<E>> {
     private void preOrder(Node node) {
         if (node == null)
             return;
-
         System.out.println(node.e);
         preOrder(node.left);
         preOrder(node.right);
+    }
+
+
+    // 二分搜索树的前序遍历(非递归实现)
+    public void preOrderNR(){
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            Node cur = stack.pop();
+            System.out.println(cur.e);
+
+            if (cur.right != null)
+                stack.push(cur.right);
+            if (cur.left != null)
+                stack.push(cur.left);
+        }
     }
 
     @Override

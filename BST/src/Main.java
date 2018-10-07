@@ -7,7 +7,8 @@ public class Main {
         for(int num: nums)
             bst.add(num);
 
-        bst.preOrder();
+//        bst.preOrder();
+        bst.preOrderNR();
         System.out.println();
         System.out.println(bst);
     }
