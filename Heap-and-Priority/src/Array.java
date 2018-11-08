@@ -122,6 +122,17 @@ public class Array<E> {
             remove(index);
     }
 
+    // 交换数组中索引为i和j的元素的位置
+    public void swap(int i, int j){
+        if (i < 0 || j < 0 || i >= size || j>= size){
+            throw new IllegalArgumentException("Unexpected index, this index is illegal!");
+        }
+
+        E t = data[i];
+        data[i] = data[j];
+        data[j] = t;
+    }
+
     @Override
     public String toString(){
 
