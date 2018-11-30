@@ -6,5 +6,7 @@ public class Main {
 
         SegmentTree<Integer> segTree = new SegmentTree<>(nums, ((a, b) -> a + b));
         System.out.println(segTree);
+
+        System.out.println(segTree.query(0, 2));
     }
 }
