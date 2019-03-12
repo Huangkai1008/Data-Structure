@@ -3,7 +3,8 @@ public class Array<E> {
     private int size;
 
     /**
-     *  构造函数,传入数组的容量capacity构造Array
+     * 构造函数,传入数组的容量capacity构造Array
+     *
      * @param capacity
      */
     public Array(int capacity) {
@@ -135,6 +136,16 @@ public class Array<E> {
         if (index != -1) {
             remove(index);
         }
+    }
+
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j >= size) {
+            throw new IllegalArgumentException("Index is illegal");
+        }
+
+        E t  = data[i];
+        data[i] = data[j];
+        data[j] = t;
     }
 
     @Override
